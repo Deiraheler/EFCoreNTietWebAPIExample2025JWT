@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductWebAPI2025", "ProductWebAPI2025\ProductWebAPI2025.csproj", "{7559EB0D-D760-4A2E-8F5C-1B558ED07628}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductWebAPI2025", "ProductWebAPI2025\ProductWebAPI2025.csproj", "{7559EB0D-D760-4A2E-8F5C-1B558ED07628}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductModel", "ProductModel\ProductModel.csproj", "{CF9530F4-AFDC-4C0E-9CD3-32DF1FF796DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductModel", "ProductModel\ProductModel.csproj", "{CF9530F4-AFDC-4C0E-9CD3-32DF1FF796DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductConsoleApp", "ProductConsoleApp\ProductConsoleApp.csproj", "{C8D8D063-AAD0-4131-930A-104FD2180D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductConsoleApp", "ProductConsoleApp\ProductConsoleApp.csproj", "{C8D8D063-AAD0-4131-930A-104FD2180D94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAD302Week3Lab12025CL.S00243021", "..\EFCoreNTietWebAPIExample2025\RAD302Week3Lab12025CL.S00243021\RAD302Week3Lab12025CL.S00243021.csproj", "{C5C064CC-BA7E-4CE3-B05F-B2BFF099DE44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAD302Week3Lab12025WebAPI.S00243021", "..\EFCoreNTietWebAPIExample2025\RAD302Week3Lab12025WebAPI.S00243021\RAD302Week3Lab12025WebAPI.S00243021.csproj", "{5F8FED5B-7693-47BB-8583-2A878BEEAC54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +31,19 @@ Global
 		{C8D8D063-AAD0-4131-930A-104FD2180D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8D8D063-AAD0-4131-930A-104FD2180D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8D8D063-AAD0-4131-930A-104FD2180D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C064CC-BA7E-4CE3-B05F-B2BFF099DE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C064CC-BA7E-4CE3-B05F-B2BFF099DE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C064CC-BA7E-4CE3-B05F-B2BFF099DE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C064CC-BA7E-4CE3-B05F-B2BFF099DE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8FED5B-7693-47BB-8583-2A878BEEAC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8FED5B-7693-47BB-8583-2A878BEEAC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8FED5B-7693-47BB-8583-2A878BEEAC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8FED5B-7693-47BB-8583-2A878BEEAC54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {911BBD74-BED5-4365-84CE-48BD85B29E01}
 	EndGlobalSection
 EndGlobal
