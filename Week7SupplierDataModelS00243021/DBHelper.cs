@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using ProductModel;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -9,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductModel
+namespace Week7SupplierDataModelS00243021
 {
     public static class DBHelper
     {
@@ -75,6 +76,11 @@ namespace ProductModel
         {
             // Get the current assembly
             Assembly assembly = Assembly.GetExecutingAssembly();
+            Console.WriteLine("Assembly");
+            foreach (var name in assembly.GetManifestResourceNames())
+            {
+                Console.WriteLine("RESOURCE FOUND: " + name);
+            }
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {   // create a stream reader
                 using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
@@ -95,3 +101,4 @@ namespace ProductModel
     }
 
 }
+

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Week7BlazorStandaloneAppS00243021\Week7BlazorStandaloneAppS00243021.csproj" />
+    <ProjectReference Include="..\Week7SupplierDataModelS00243021\Week7SupplierDataModelS00243021.csproj" />
+  </ItemGroup>
+
+</Project>
