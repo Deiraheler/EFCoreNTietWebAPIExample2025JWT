@@ -1,10 +1,43 @@
-@page "/suppliers"
+@page "/supplierview"
 
-<h3>Supplier View</h3>
-
-<ul>
-    @foreach (var supplier in SupplierStaticContext.Suppliers)
-    {
-        <li>@supplier.Name - @supplier.ContactInfo</li>
-    }
-</ul>
+<h3>SupplierView</h3>
+@if (suppliers == null)
+{
+    <p><em>Loading........</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Supplier ID</th>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Contact Title</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>Postal Code</th>
+                <th>Country</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in suppliers)
+            {
+                <tr>
+                    <td>@s.SupplierID</td>
+                    <td>@s.CompanyName</td>
+                    <td>@s.ContactName</td>
+                    <td>@s.ContactTitle</td>
+                    <td>@s.Address</td>
+                    <td>@s.City</td>
+                    <td>@s.Region</td>
+                    <td>@s.PostalCode</td>
+                    <td>@s.Country</td>
+                    <td>@s.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
