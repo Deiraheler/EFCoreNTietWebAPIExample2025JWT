@@ -1,0 +1,10 @@
+@page "/suppliers"
+
+<h3>Supplier View</h3>
+
+<ul>
+    @foreach (var supplier in SupplierStaticContext.Suppliers)
+    {
+        <li>@supplier.Name - @supplier.ContactInfo</li>
+    }
+</ul>
