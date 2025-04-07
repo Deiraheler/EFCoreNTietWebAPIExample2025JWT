@@ -1,0 +1,82 @@
+﻿@page "/supplierproduct/{SupplierID:int}"
+@using RAD302Week6BlazorClient.S00243021
+@using RAD302Week6Lab2025.DataModel.S00243021
+
+<h3>Supplier Products</h3>
+<h1 class="page-title">Details for @Current.CompanyName</h1>
+
+<div class="col-12 row">
+    <div class="col-10 row">
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label">Supplier ID</div>
+            <div class="col-sm-8">
+                <label type="text" class="form-control-plaintext">@Current.SupplierID</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label">Supplier Address</div>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@Current.Address</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label">Contact Name</div>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@Current.ContactName</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Description</th>
+            <th>Qty in Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Current.SupplierProducts)
+        {
+            <tr>
+                <td>@p.ID</td>
+                <td>@p.Description</td>
+                <td>@p.StockOnHand</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public int SupplierID { get; set; }
+
+    public Supplier Current { get; set; }
+
+    [Inject]
+    public HttpClient Http { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // If static data hasn't been loaded yet, load it now
+        if (SupplierStaticContext.Suppliers == null)
+        {
+            SupplierStaticContext.Suppliers = await Http.GetFromJsonAsync<Supplier[]>("sample-data/Supplier.json");
+            SupplierStaticContext.Products = await Http.GetFromJsonAsync<Product[]>("sample-data/Product.json");
+
+            // Optional: add product assignment logic if needed
+            foreach (var s in SupplierStaticContext.Suppliers)
+            {
+                s.SupplierProducts = SupplierStaticContext.Products
+                    .OrderBy(p => new Random().Next())
+                    .Take(3)
+                    .ToList();
+            }
+        }
+
+        Current = SupplierStaticContext.GetNewSupplier(SupplierID);
+    }
+}

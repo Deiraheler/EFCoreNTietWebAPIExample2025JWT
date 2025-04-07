@@ -22,11 +22,15 @@ namespace RAD302Week6BlazorClient2025.S00243021.Pages
             {
                 SupplierStaticContext.Suppliers = await Http.GetFromJsonAsync<Supplier[]>("sample-data/Supplier.json");
                 SupplierStaticContext.Products = await Http.GetFromJsonAsync<Product[]>("sample-data/Product.json");
+                products = SupplierStaticContext.Products;
+                suppliers = SupplierStaticContext.Suppliers;
+
                 InitialiseSupplierProducts();
             }
             else
             {
                 suppliers = SupplierStaticContext.Suppliers;
+                products = SupplierStaticContext.Products;
             }
             await base.OnInitializedAsync();
         }
